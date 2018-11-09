@@ -284,7 +284,7 @@ module.exports = {
             loader: require.resolve('eslint-loader'),
           },
         ],
-        include: paths.appSrc,
+        exclude: /node_modules/
       },
       {
         // "oneOf" will traverse all following loaders until one will
@@ -305,7 +305,7 @@ module.exports = {
           // The preset includes JSX, Flow, TypeScript and some ESnext features.
           {
             test: /\.(js|mjs|jsx|ts|tsx)$/,
-            include: paths.appSrc,
+            exclude: /node_modules/,
 
             loader: require.resolve('babel-loader'),
             options: {
